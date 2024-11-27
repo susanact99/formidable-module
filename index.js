@@ -9,7 +9,7 @@ const uploadDir = __dirname + '/uploads';
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);
 }
-
+app.use(express.static(__dirname + '/public'));
 // Servir el formulario
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
